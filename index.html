@@ -20,7 +20,8 @@
     <div class="derecha">
       <h2>Calculadora 1</h2>
     <div class="calculadora">
-      <input type="number" id="num1" class="btn" style="grid-column: span 3"/>
+      <!-- required para que no este vacio en num 1 y num 2 -->
+      <input type="number" id="num1" class="btn" style="grid-column: span 3" required/>
 
       <div style="grid-column: span 1" class="btnc" >
         <select id="opciones" name="opciones" onchange="deshabilitarnum2()" >
@@ -31,7 +32,7 @@
           <option value="^2">^2</option>
         </select>
       </div>
-      <input type="number" id="num2" class="btn" style="grid-column: span 3"/>
+      <input type="number" id="num2" class="btn" style="grid-column: span 3" required />
 
       <button
         id="botonigual"
@@ -41,8 +42,8 @@
       >
         =
       </button>
-
-      <input type="text" id="resultado"  class="btno" style="grid-column: span 3"  readonly/>
+<!-- readonly solo para que sea lectura y no pueda ser modificado -->
+      <input type="text" id="resultado"  class="btnr" style="grid-column: span 3"  readonly/>
       <button class="btnc" style="grid-column: span 1" onclick="borrarCalc()">C</button>
       <!-- <input
         type="submit"
