@@ -8,6 +8,17 @@ body {
     font-family: Arial, sans-serif;
 }
 
+
+.izquierda {
+    padding: 32px;
+    width: 50%;
+  }
+  
+  .derecha {
+    padding: 32px;
+    width: 50%;
+  }
+
 .calculadora {
     background-color: #333;
     border-radius: 10px;

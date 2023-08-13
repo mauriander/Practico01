@@ -12,42 +12,52 @@
     />
 
     <title>Calculadora /mauriander</title>
+    
   </head>
-
+  
   <body>
+    
+    <div class="derecha">
+      <h2>Calculadora 1</h2>
     <div class="calculadora">
-      <input type="number" id="num1" class="btn" style="grid-column: span 2"/>
+      <input type="number" id="num1" class="btn" style="grid-column: span 3"/>
 
-      <div style="grid-column: span 2" class="btnc">
-        <select id="opciones" name="opciones" >
+      <div style="grid-column: span 1" class="btnc" >
+        <select id="opciones" name="opciones" onchange="deshabilitarnum2()" >
           <option value="+">+</option>
           <option value="-">-</option>
           <option value="*">*</option>
           <option value="/">/</option>
+          <option value="^2">^2</option>
         </select>
       </div>
-      <input type="number" id="num2" class="btn"/>
+      <input type="number" id="num2" class="btn" style="grid-column: span 3"/>
 
       <button
         id="botonigual"
         onclick="calcular()"
         class="btno"
-        style="grid-column: span 2"
+        style="grid-column: span 1"
       >
         =
       </button>
 
-      <input type="text" id="resultado"  class="btno" style="grid-column: span 2" />
-      <input
+      <input type="text" id="resultado"  class="btno" style="grid-column: span 3"  readonly/>
+      <button class="btnc" style="grid-column: span 1" onclick="borrarCalc()">C</button>
+      <!-- <input
         type="submit"
         onclick="borrarCalc()"
         value="Borrar"
         style="margin-right: 16px"
         class="btnc"
-      />
+      /> -->
       <!-- <p id="resultado" style="font-size: 20px; margin-left: 8px"></p> -->
     </div>
+  </div>
+  <div class="izquierda">
+    <h2>Calculadora 2</h2>
     <div class="calculadora">
+      
       <button class="btnmio">
         <a
           href="https://github.com/mauriander"
@@ -57,33 +67,35 @@
         ></a>
       </button>
       
-      <!-- <div class="display" ></div> -->
-      <input  type="text" id="resultado"  class="display" />
-      <button class="btn" onclick="muestra7(7)">7</button>
-      <button class="btn" onclick="muestra8(8)">8</button>
-      <button class="btn" onclick="muestra9(9)">9</button>
+      
+      
+      <input  type="text" id="result"  class="display" readonly />
+      <button class="btn" onclick="muestra7()">7</button>
+      <button class="btn" onclick="muestra8()">8</button>
+      <button class="btn" onclick="muestra9()">9</button>
       <button class="btno" onclick="dividir()">/</button>
-      <button class="btn" onclick="muestra4(4)">4</button>
-      <button class="btn" onclick="muestra5(5)">5</button>
-      <button class="btn" onclick="muestra6(6)">6</button>
+      <button class="btn" onclick="muestra4()">4</button>
+      <button class="btn" onclick="muestra5()">5</button>
+      <button class="btn" onclick="muestra6()">6</button>
       <button class="btno" onclick="multiplicar()">*</button>
-      <button class="btn" onclick="muestra1(1)">1</button>
-      <button class="btn" onclick="muestra2(2)">2</button>
-      <button class="btn" onclick="muestra3(3)">3</button>
+      <button class="btn" onclick="muestra1()">1</button>
+      <button class="btn" onclick="muestra2()">2</button>
+      <button class="btn" onclick="muestra3()">3</button>
       <button class="btno" onclick="restar()">-</button>
-      <button class="btn" style="grid-column: span 2">0</button>
-      <button class="btno">.</button>
+      <button class="btn" onclick="muestra0()" style="grid-column: span 2" >0</button>
+      <button class="btno" onclick="muestrapunto()">.</button>
       <button class="btno" onclick="sumar()">+</button>
-      <button class="btnc" style="grid-column: span 2">C</button>
+      <button class="btnc" onclick="limpiar()" style="grid-column: span 2">C</button>
       <button
         id="botonigual"
-        onclick="calcular()"
+        onclick="calcular2()"
         class="btno"
         style="grid-column: span 2"
       >
         =
       </button>
     </div>
+  </div>
 
     <script src="/script.js"></script>
   </body>
