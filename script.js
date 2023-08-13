@@ -1,31 +1,42 @@
-let num1 = parseFloat(document.getElementById("num1").value);
-let num2 = parseFloat(document.getElementById("num2").value);
+function calcular() {
+  var num1 = parseFloat(document.getElementById("num1").value);
+  var num2 = parseFloat(document.getElementById("num2").value);
+  var operador = document.getElementById("opciones").value;
+  var resultado = 0;
 
 
-var selecto = document.getElementById("opciones");
-var opc = selecto.options[selecto.selectedIndex].value;
-//buttons
-function calcular(){
-let result = document.getElementById("result");
- alert(opc);
-if(opc == '+'){
-  result=num1+num2;
-  alert(result); 
+
+
+  switch (operador) {
+      case "+":
+          resultado = num1 + num2;
+          break;
+      case "-":
+          resultado = num1 - num2;
+          break;
+      case "*":
+          resultado = num1 * num2;
+          break;
+      case "/":
+          if (num2 === 0) {
+            alert("No se puede dividir por 0");
+            return;
+        }
+          resultado = num1 / num2;
+          break;
+      default:
+          break;
+  }
+
+  document.getElementById("resultado").value = resultado;
+  document.getElementById("resultadoDisplay").innerText = "Resultado: " + resultado;
 }
-if(opc == '-'){
-  result = num1 - num2;
-  alert(result);
-}
-if(selecto.value === "*"){
-  result=multiplicacion(num1,num2);
-  document.getElementById("resultado")= result;
-}
-if(selecto.value === "/"){
-  result=division(num1,num2);
-  document.getElementById("resultado")= result;
-}
- document.getElementById("resultado").textContent= result; 
- 
+
+function borrarCalc() {
+  document.getElementById("num1").value = "";
+  document.getElementById("num2").value = "";
+  document.getElementById("resultado").value = "";
+  document.getElementById("resultadoDisplay").innerText = "";
 }
 
 
@@ -33,12 +44,7 @@ if(selecto.value === "/"){
 
 
 //mientras el usuario no ingrese igual no voy a dejar de leer numeros
-let input = document.getElementById('result');
-let contenido='';
- var lectura1='El resultado es'
-// var lectura2=
 
-document.getElementById('resultado').textContent = lectura1;
 function mostrarBotones() {
   var contenedor = document.getElementById("contenedorBotones");
   contenedor.style.display = "block";

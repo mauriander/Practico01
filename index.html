@@ -15,41 +15,38 @@
   </head>
 
   <body>
-    <input type="number" id="num1" />
-    <label for="opciones"> OPERACION:</label>
-    <div>
-      <select id="opciones" name="opciones">
-        <option value="+">+</option>
-        <option value="-">-</option>
-        <option value="*">*</option>
-        <option value="/">/</option>
-      </select>
+    <div class="calculadora">
+      <input type="number" id="num1" class="btn" style="grid-column: span 2"/>
+
+      <div style="grid-column: span 2" class="btnc">
+        <select id="opciones" name="opciones" >
+          <option value="+">+</option>
+          <option value="-">-</option>
+          <option value="*">*</option>
+          <option value="/">/</option>
+        </select>
+      </div>
+      <input type="number" id="num2" class="btn"/>
+
+      <button
+        id="botonigual"
+        onclick="calcular()"
+        class="btno"
+        style="grid-column: span 2"
+      >
+        =
+      </button>
+
+      <input type="text" id="resultado"  class="btno" style="grid-column: span 2" />
+      <input
+        type="submit"
+        onclick="borrarCalc()"
+        value="Borrar"
+        style="margin-right: 16px"
+        class="btnc"
+      />
+      <!-- <p id="resultado" style="font-size: 20px; margin-left: 8px"></p> -->
     </div>
-    <!--     
-    <select>
-      <option value="+">+</option>
-      <option value="-">-</option>
-      <option value="*">*</option>
-      <option value="/">/</option>
-    </select> -->
-    <input type="number" id="num2" />
-    <button
-      id="botonigual"
-      onclick="calcular()"
-      class="btno"
-      style="grid-column: span 2"
-    >
-      =
-    </button>
-    <input type="number" id="result" />
-    <input type="text" id="resultado" />
-    <input
-      type="submit"
-      onclick="borrarCalc()"
-      value="Borrar"
-      style="margin-right: 16px"
-    />
-    <p id="resultado" style="font-size: 20px; margin-left: 8px"></p>
     <div class="calculadora">
       <button class="btnmio">
         <a
@@ -59,8 +56,9 @@
           >Repositorio Practico1 <i class="fab fa-github"></i
         ></a>
       </button>
-      <div class="display">Pantalla para mostrar</div>
-
+      
+      <!-- <div class="display" ></div> -->
+      <input  type="text" id="resultado"  class="display" />
       <button class="btn" onclick="muestra7(7)">7</button>
       <button class="btn" onclick="muestra8(8)">8</button>
       <button class="btn" onclick="muestra9(9)">9</button>
